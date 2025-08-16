@@ -1,0 +1,33 @@
+spring:
+#  security:
+#    user:
+#      name: user
+#      password: "{noop}123456"
+  datasource:
+    url: jdbc:h2:mem:forohub;DB_CLOSE_DELAY=-1;MODE=MySQL
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  flyway:
+    enabled: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 8080
+
+security:
+  jwt:
+    secret: "cambia-esto-por-uno-largo-y-seguro"
+    expiration-minutes: 1440
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
